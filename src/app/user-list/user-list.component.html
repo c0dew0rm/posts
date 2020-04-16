@@ -1,7 +1,14 @@
 <div class="container-xl">
     <div class="row">
         <div class="col-md-12">
-            <input type="text" class="form-control" id="searchBar" placeholder="Search">
+            <input type="text" [(ngModel)]="filteredStatus" class="form-control" id="searchBar" placeholder="Search">
+            <div class="list-group">
+                <li
+                    class="list-group-item"
+                    *ngFor="let user of listOfUsers | filter:filteredStatus:'username'">
+                    <span class="badge">{{ user.username }}</span>
+                </li>
+            </div>
         </div>
     </div>
     <br>

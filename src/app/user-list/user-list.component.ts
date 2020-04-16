@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class UserListComponent implements OnInit {
 
   listOfUsers:any = [];
+  listOfUserNames:string[] = [];
+  filteredStatus:string = "";
 
   constructor(private dataService:DataService, private router:Router) { }
 
@@ -17,6 +19,9 @@ export class UserListComponent implements OnInit {
     this.dataService.getUsers().subscribe(
       users => {
         this.listOfUsers = users;
+        for(let i=0;i<this.listOfUsers.length;i++){
+          this.listOfUserNames.push(this.listOfUsers[i].username);
+        }
       });
   }
 
