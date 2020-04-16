@@ -1,0 +1,9 @@
+.main-container {
+    padding-top: 2%;
+}
+.table-heading, .table-body {
+    text-align: center;
+}
+.table-row {
+    cursor:pointer;
+}
